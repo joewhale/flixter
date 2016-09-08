@@ -1,0 +1,20 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import url(https://fonts.googleapis.com/css?family=Ubuntu:400,700);
+
+.navbar {
+  border-radius:0;
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 400;
+  box-shadow: 0px 1px 3px #2a2a2a;
+  background:url('assault.png');
+
+}
+
+.navbar-inverse a.navbar-brand {
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 400;
+  color: #F1FC21;
+  letter-spacing: .1em;
+}
+
