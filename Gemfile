@@ -30,6 +30,7 @@ gem 'rails_12factor', group: :production
 gem 'bootstrap-sass', '~> 3.3.5.1'
 gem 'sprockets', '2.11.0'
 gem 'sass-rails'
+gem 'devise'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -41,4 +42,3 @@ gem 'sass-rails'
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
-
