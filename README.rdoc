@@ -1,4 +1,4 @@
 == README
 
-This is the README for my Flixter app for FireHoseProject
+This is the README for my Flixter app for FireHoseProject.   
 This project is meant only for FHP use
