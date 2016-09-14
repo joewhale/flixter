@@ -3,6 +3,14 @@ class EnrollmentsController < ApplicationController
 
   def create
     current_user.enrollments.create(course: current_course)
+
+    # enrollment = Enrollment.new
+    # enrollment.user = current_user
+    # enrollment.course = current_cource
+    # enrollment.save
+
+
+
     redirect_to course_path(current_course)
   end
 
