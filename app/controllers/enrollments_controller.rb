@@ -2,17 +2,32 @@ class EnrollmentsController < ApplicationController
   before_action :authenticate_user!
 
   def create
-    current_user.enrollments.create(course: current_course)
+    if current_course.premium?
+      current_user.enrollments.create(course: current_course)
 
-    # enrollment = Enrollment.new
-    # enrollment.user = current_user
-    # enrollment.course = current_cource
-    # enrollment.save
+      # Amount in cents
+      @amount = (current_course.cost * 100).to_i
 
+      customer = Stripe::Customer.create(
+        :email => current_user.email,
+        :source  => params[:stripeToken]
+      )
 
+      charge = Stripe::Charge.create(
+        :customer    => customer.id,
+        :amount      => @amount,
+        :description => 'Filxer Premo Course Content',
+        :currency    => 'usd'
+      )
+    end
 
-    redirect_to course_path(current_course)
-  end
+      current_user.enrollments.create(course: current_course)
+      redirect_to course_path(current_course)
+
+      rescue Stripe::CardError => e
+        flash[:error] = e.message
+        redirect_to root_path
+    end
 
 
 
@@ -21,4 +36,5 @@ class EnrollmentsController < ApplicationController
   def current_course
     @current_course ||= Course.find(params[:course_id])
   end
+
 end
