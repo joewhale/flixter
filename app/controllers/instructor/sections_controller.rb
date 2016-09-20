@@ -43,10 +43,10 @@ class Instructor::SectionsController < ApplicationController
 
 
   def current_section
-    @current_section ||= Section.find(params[:section_id])
+    @current_section ||= Section.find(params[:id])
   end
 
   def section_params
-    params.require(:section).permit(:title, :row_order_position)
+    params.require(:section).permit(:row_order_position)
   end
 end
