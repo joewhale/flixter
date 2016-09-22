@@ -19,9 +19,11 @@ class EnrollmentsController < ApplicationController
         :description => 'Filxer Premo Course Content',
         :currency    => 'usd'
       )
-    end
 
+
+    else
       current_user.enrollments.create(course: current_course)
+    end
       redirect_to course_path(current_course)
 
       rescue Stripe::CardError => e
