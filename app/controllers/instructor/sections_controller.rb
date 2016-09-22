@@ -43,6 +43,6 @@ class Instructor::SectionsController < ApplicationController
   end
 
   def section_params
-    params.require(:section).permit(:row_order_position)
+    params.require(:section).permit(:row_order_position, :title)
   end
 end
