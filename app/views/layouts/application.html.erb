@@ -72,10 +72,47 @@
 
   <div id="footer">
     <div class="container">
+      <div class="col-xs-12 col-sm-3">
+              <b>Teachers</b>
+              <br />
+              <%= link_to 'Teach a Course', new_instructor_course_path %>
+              <br />
+              <%= link_to 'My Dashboard', dashboard_path %>
+            </div>
+            <div class="col-xs-12 col-sm-3">
+              <b>About</b>
+              <br />
+              <%= link_to 'Team', '#' %>
+              <br />
+              <%= link_to 'Careers', '#' %>
+              <br />
+              <%= link_to 'Privacy Policy', '#' %>
+            </div>
+            <div class="col-xs-12 col-sm-3">
+              <b>Contact</b>
+              <br />
+              ken@thefirehoseproject.com
+              <br />
+              One Kendall Square
+              <br />
+              Cambridge MA, 02113
+            </div>
+            <div class="col-xs-12 col-sm-3 social">
+              <b>Social</b>
+                <br>
+                <br>
+                <%= link_to 'https://github.com/joewhale' do %>
+                  <%= image_tag 'github.png', class: 'social-button' %>
+                <% end %>
+                <%= link_to 'https://www.facebook.com/joel.choi.376' do %>
+                  <%= image_tag 'facebook.png', class: 'social-button' %>
+                <% end %>
+                <%= link_to 'https://twitter.com/joelchoi_' do %>
+                    <%= image_tag 'twitter.png', class: 'social-button' %>
+                <% end %>
 
-      <b>Teachers</b>
-      <br />
-      <%= link_to 'Teach a Course', new_instructor_course_path %>
+
+            </div>
     </div>
   </div>
 
